@@ -10,4 +10,4 @@ https://khj68.github.io/senior-vibe/
 
 별도 문서:
 
-- 사전학습 및 산출물 아이디에이션: https://khj68.github.io/senior-vibe/prework-outputs.html
+- 기초 기술 스택 사전학습 로드맵: https://khj68.github.io/senior-vibe/prework-outputs.html
