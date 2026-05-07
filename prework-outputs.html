@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>사전학습 및 산출물 아이디에이션</title>
+  <meta name="description" content="시니어바이브 산학협력 팀별 사전학습과 산출물 아이디어 정리">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172026;
+      --muted: #607179;
+      --line: #d9e2e1;
+      --paper: #ffffff;
+      --mist: #f4f8f6;
+      --wash: #e8f1ee;
+      --teal: #0d766e;
+      --deep: #123d3c;
+      --blue: #245d90;
+      --amber: #a26313;
+      --rose: #a93f4c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+      background: var(--mist);
+      color: var(--ink);
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(180deg, #e8f1ef 0%, #f7faf8 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero {
+      min-height: 52vh;
+      display: grid;
+      align-content: center;
+      padding: 70px 0 54px;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--teal);
+      font-size: 0.88rem;
+      font-weight: 850;
+    }
+
+    h1 {
+      max-width: 980px;
+      margin: 0;
+      font-size: clamp(2.15rem, 5.4vw, 4.8rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 870px;
+      margin: 24px 0 0;
+      color: #33464c;
+      font-size: clamp(1.02rem, 2vw, 1.22rem);
+    }
+
+    .hero-actions,
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+    }
+
+    .pill,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .pill {
+      min-height: 36px;
+      padding: 7px 12px;
+      border: 1px solid #b8d0cc;
+      background: rgba(255,255,255,0.7);
+      color: #283e44;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .tag {
+      min-height: 28px;
+      padding: 4px 9px;
+      background: #edf4f2;
+      color: #2e444a;
+      font-size: 0.79rem;
+    }
+
+    .tag.best {
+      background: #e2f3ef;
+      color: var(--teal);
+    }
+
+    .tag.warn {
+      background: #fff0db;
+      color: var(--amber);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(255,255,255,0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    nav .wrap {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+
+    nav a {
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: #34434a;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    nav a:hover {
+      background: #edf4f2;
+    }
+
+    main {
+      padding-bottom: 72px;
+    }
+
+    section {
+      padding: 54px 0 8px;
+    }
+
+    .band {
+      margin-top: 48px;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.7rem, 3vw, 2.45rem);
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .section-note {
+      max-width: 880px;
+      margin-bottom: 24px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      padding: 18px;
+      box-shadow: 0 1px 0 rgba(23,32,38,0.04);
+    }
+
+    .track-card {
+      border-top: 5px solid var(--teal);
+    }
+
+    .track-card.alt {
+      border-top-color: var(--blue);
+    }
+
+    .label {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 850;
+    }
+
+    ul,
+    ol {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+      font-size: 0.93rem;
+    }
+
+    th {
+      background: #eaf3f0;
+      color: #25343a;
+      font-size: 0.84rem;
+      font-weight: 850;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .student-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .badge {
+      flex: 0 0 auto;
+      min-width: 74px;
+      padding: 7px 9px;
+      border-radius: 6px;
+      background: var(--deep);
+      color: white;
+      text-align: center;
+      font-size: 0.84rem;
+      font-weight: 900;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 12px;
+    }
+
+    .week {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 14px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      padding: 15px;
+    }
+
+    .week time {
+      color: var(--teal);
+      font-weight: 900;
+    }
+
+    .callout {
+      border-left: 5px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      background: #f1f8f6;
+      padding: 18px;
+    }
+
+    .callout.warning {
+      border-left-color: var(--amber);
+      background: #fff8ec;
+    }
+
+    footer {
+      padding: 36px 0 56px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid.two,
+      .grid.three {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 50vh;
+        padding: 60px 0 48px;
+      }
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        border-bottom: 1px solid var(--line);
+      }
+
+      td {
+        border-bottom: 0;
+        padding: 10px 14px;
+      }
+
+      td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 4px;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 850;
+      }
+
+      .week {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <p class="eyebrow">SeniorVibe x SKKU Prework</p>
+      <h1>사전학습 및 산출물 아이디에이션</h1>
+      <p class="lead">
+        산학협력 시작 전에 학생들이 무엇을 공부하고, 각 팀이 어떤 산출물을 만들면 좋은지 정리했습니다.
+        핵심은 “공부만 하는 기간”이 아니라, 학습한 내용을 바로 작은 결과물로 연결하는 것입니다.
+      </p>
+      <div class="hero-actions" aria-label="관련 링크">
+        <a class="pill" href="./index.html">2-Track 운영안 보기</a>
+        <span class="pill">R&amp;D/ROM 팀 사전학습</span>
+        <span class="pill">바이럴 MVP 팀 사전학습</span>
+        <span class="pill">2주 온보딩 산출물</span>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="문서 목차">
+    <div class="wrap">
+      <a href="#summary">요약</a>
+      <a href="#common">공통 학습</a>
+      <a href="#rnd">R&amp;D/ROM</a>
+      <a href="#viral">바이럴 MVP</a>
+      <a href="#students">학생별</a>
+      <a href="#outputs">산출물</a>
+      <a href="#checklist">2주 체크리스트</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="summary">
+      <div class="wrap">
+        <h2>운영 원칙</h2>
+        <p class="section-note">
+          학생별 경험 차이가 크기 때문에 모두에게 같은 과제를 주면 안 됩니다. 대신 팀별 공통 학습을 짧게 깔고,
+          각자 하나의 작은 산출물을 맡겨서 2주 안에 “이 학생이 어디까지 가능한지” 확인하는 구조가 좋습니다.
+        </p>
+        <div class="grid three">
+          <article class="card">
+            <h3>공부는 산출물과 묶기</h3>
+            <p>자료만 던지지 말고, 학습 결과를 실험 노트, 화면 시안, 점수 로직, 테스트 케이스로 남기게 합니다.</p>
+            <div class="tag-row">
+              <span class="tag best">학습 기록</span>
+              <span class="tag">작은 데모</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>의료 표현은 보수적으로</h3>
+            <p>오십견, ROM, 어깨 나이 표현은 자가 체크와 생활습관 참고로 한정하고 진단처럼 보이지 않게 합니다.</p>
+            <div class="tag-row">
+              <span class="tag best">자가 체크</span>
+              <span class="tag warn">진단 금지</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>2주마다 계속/전환 판단</h3>
+            <p>기술 적합도는 말보다 산출물로 판단합니다. 2주 결과를 보고 역할을 유지하거나 더 쉬운 범위로 재배치합니다.</p>
+            <div class="tag-row">
+              <span class="tag best">주간 데모</span>
+              <span class="tag">역할 조정</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="common" class="band">
+      <div class="wrap">
+        <h2>공통 사전학습</h2>
+        <p class="section-note">
+          두 팀 모두 시니어바이브가 무엇을 하는지, 사용자가 어떤 불안을 갖는지, 어떤 표현을 조심해야 하는지부터 맞춰야 합니다.
+        </p>
+        <div class="grid two">
+          <article class="card">
+            <h3>도메인 이해</h3>
+            <ul>
+              <li>오십견의 일반적인 증상과 어깨 가동범위 제한이 사용자 경험에서 어떤 의미인지 파악</li>
+              <li>ROM은 진단값이 아니라 움직임 범위를 참고하는 지표라는 관점 이해</li>
+              <li>키오스크, 카메라 측정, 결과 리포트가 사용자에게 어떤 흐름으로 보이는지 정리</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>제품/윤리 기준</h3>
+            <ul>
+              <li>의료적 진단, 치료 효과 보장, 정확도 과장 표현 금지</li>
+              <li>카메라 권한, 개인정보, 영상 저장 여부를 사용자에게 명확히 설명하는 방식 학습</li>
+              <li>모든 데모는 익명 샘플 데이터와 테스트 계정 기준으로 제작</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>협업 기본기</h3>
+            <ul>
+              <li>GitHub Issue, branch, pull request, review comment 흐름 실습</li>
+              <li>매주 “이번 주 한 일, 막힌 것, 다음 주 산출물” 3문장 업데이트 작성</li>
+              <li>실험/구현 결과를 재현 가능한 링크, 캡처, 표 형태로 남기는 습관 만들기</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>사용자 관점</h3>
+            <ul>
+              <li>어깨 불편을 느끼는 40~60대 사용자와 자녀 세대가 각각 어떤 문구에 반응할지 비교</li>
+              <li>“무섭게 경고하는 서비스”보다 “가볍게 체크하고 다음 행동을 권하는 서비스” 톤 익히기</li>
+              <li>검사 결과보다 공유하고 싶은 결과 카드가 무엇인지 리서치</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="rnd">
+      <div class="wrap">
+        <h2>R&amp;D/ROM 팀 사전학습</h2>
+        <p class="section-note">
+          이형진과 박하준은 실제 제품의 본체 기술에 가까운 팀입니다. 이 팀은 “논문처럼 멋진 모델”보다
+          측정 조건, 실패 케이스, 재현 가능한 실험 로그를 만드는 것이 먼저입니다.
+        </p>
+        <div class="grid two">
+          <article class="card track-card">
+            <p class="label">이형진 중심</p>
+            <h3>컴퓨터비전/모델 학습</h3>
+            <ul>
+              <li>MediaPipe Pose, MoveNet, YOLO Pose처럼 웹캠 영상에서 관절 keypoint를 뽑는 방식 비교</li>
+              <li>사전학습 모델을 그대로 쓸 때와 일부 head만 붙여 보정할 때의 차이 정리</li>
+              <li>어깨 외전, 굴곡, 좌우 비대칭처럼 ROM 계산에 필요한 기본 기하 이해</li>
+              <li>조명, 옷 색상, 카메라 거리, 팔 가림, 측면/정면 자세에 따른 실패 유형 정리</li>
+            </ul>
+          </article>
+          <article class="card track-card">
+            <p class="label">박하준 중심</p>
+            <h3>측정 환경/기기 관점</h3>
+            <ul>
+              <li>카메라 해상도, 촬영 거리, 키오스크 설치 높이, 사용자 안내 문구가 측정 품질에 미치는 영향 정리</li>
+              <li>임베디드/기기 개발 관점에서 입력, 처리, 출력, 로그 저장 흐름 그리기</li>
+              <li>실험 참여자에게 어떤 자세 안내가 필요한지 스크립트 작성</li>
+              <li>수학적 각도 계산을 그림으로 설명하고, 사람이 봐도 이해되는 검증표 만들기</li>
+            </ul>
+          </article>
+        </div>
+        <table style="margin-top: 14px;">
+          <thead>
+            <tr>
+              <th>학습 주제</th>
+              <th>짧은 설명</th>
+              <th>바로 연결할 산출물</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="학습 주제">Pose estimation</td>
+              <td data-label="짧은 설명">카메라 영상에서 어깨, 팔꿈치, 손목 keypoint를 찾는 기술</td>
+              <td data-label="바로 연결할 산출물">모델 후보 비교표와 샘플 캡처 10장</td>
+            </tr>
+            <tr>
+              <td data-label="학습 주제">ROM 계산</td>
+              <td data-label="짧은 설명">관절 좌표로 팔 올림 각도와 좌우 차이를 계산하는 방식</td>
+              <td data-label="바로 연결할 산출물">각도 계산식 설명 이미지와 검증용 엑셀/표</td>
+            </tr>
+            <tr>
+              <td data-label="학습 주제">측정 프로토콜</td>
+              <td data-label="짧은 설명">누가 찍어도 비슷한 결과가 나오게 하는 촬영 조건</td>
+              <td data-label="바로 연결할 산출물">촬영 안내문, 실패 케이스 분류표</td>
+            </tr>
+            <tr>
+              <td data-label="학습 주제">실험 로그</td>
+              <td data-label="짧은 설명">모델, 입력 조건, 결과, 실패 원인을 누적하는 형식</td>
+              <td data-label="바로 연결할 산출물">주간 ROM 실험 리포트 템플릿</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="viral" class="band">
+      <div class="wrap">
+        <h2>바이럴 MVP 팀 사전학습</h2>
+        <p class="section-note">
+          손민준, 이여진, 이수빈은 “어깨 나이 테스트”를 작은 제품처럼 만들어야 합니다.
+          카메라 측정은 선택 기능이고, 사용자가 끝까지 완료하고 공유하고 싶게 만드는 흐름이 더 중요합니다.
+        </p>
+        <div class="grid three">
+          <article class="card track-card alt">
+            <p class="label">손민준 중심</p>
+            <h3>점수 로직/API/결과 생성</h3>
+            <ul>
+              <li>OX 문항별 가중치, 결과 타입, 추천 문구를 데이터 구조로 설계</li>
+              <li>LLM을 쓸 경우 입력값과 금칙 표현을 분리하는 프롬프트 구조 학습</li>
+              <li>결과 공유 URL, 이미지 생성, 로그 수집 흐름 조사</li>
+            </ul>
+          </article>
+          <article class="card track-card alt">
+            <p class="label">이여진 중심</p>
+            <h3>AI 활용/인터랙션</h3>
+            <ul>
+              <li>Unity WebGL 또는 웹 기반 인터랙션 중 어떤 방식이 빠른지 비교</li>
+              <li>카메라 권한 요청, 측정 안내, 실패 안내 문구를 사용자 흐름으로 정리</li>
+              <li>프롬프트 엔지니어링으로 결과 해석 문구를 부드럽게 만드는 실험</li>
+            </ul>
+          </article>
+          <article class="card track-card alt">
+            <p class="label">이수빈 중심</p>
+            <h3>게임형 화면/상태 관리</h3>
+            <ul>
+              <li>설문 진행 상태, 결과 타입, 재시도, 공유 버튼의 화면 상태를 정리</li>
+              <li>Unity/C# 또는 웹 컴포넌트로 간단한 어깨 챌린지 화면 프로토타입</li>
+              <li>테스트 케이스와 사용자가 헷갈릴 수 있는 예외 상황 목록 작성</li>
+            </ul>
+          </article>
+        </div>
+        <table style="margin-top: 14px;">
+          <thead>
+            <tr>
+              <th>학습 주제</th>
+              <th>짧은 설명</th>
+              <th>바로 연결할 산출물</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="학습 주제">설문 UX</td>
+              <td data-label="짧은 설명">사용자가 부담 없이 답하고 끝까지 완료하게 만드는 문항 흐름</td>
+              <td data-label="바로 연결할 산출물">OX 문항 12개, 결과 타입 4개</td>
+            </tr>
+            <tr>
+              <td data-label="학습 주제">브라우저 카메라</td>
+              <td data-label="짧은 설명">권한 허용, 미허용, 실패, 재시도 흐름</td>
+              <td data-label="바로 연결할 산출물">카메라 측정 화면 플로우차트</td>
+            </tr>
+            <tr>
+              <td data-label="학습 주제">결과 생성</td>
+              <td data-label="짧은 설명">점수와 측정값을 어깨 나이, 유형, 권장 행동으로 변환</td>
+              <td data-label="바로 연결할 산출물">결과 카드 문구 8종</td>
+            </tr>
+            <tr>
+              <td data-label="학습 주제">공유/전환</td>
+              <td data-label="짧은 설명">친구 공유, 상담/측정 예약, 브랜드 노출로 이어지는 구조</td>
+              <td data-label="바로 연결할 산출물">공유 문구 5개, CTA 문구 5개</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="students">
+      <div class="wrap">
+        <h2>학생별 사전학습 과제</h2>
+        <p class="section-note">
+          각 학생에게 모두 같은 숙제를 주기보다, 미팅에서 확인된 관심사와 학습 단계에 맞춰 작게 나눕니다.
+        </p>
+        <div class="grid two">
+          <article class="card">
+            <div class="student-head">
+              <div>
+                <h3>이형진</h3>
+                <p>CV/의료 AI 실험 리드</p>
+              </div>
+              <span class="badge">R&amp;D</span>
+            </div>
+            <div class="tag-row">
+              <span class="tag best">Pose</span>
+              <span class="tag best">파인튜닝</span>
+              <span class="tag">실험 설계</span>
+            </div>
+            <ul>
+              <li>MediaPipe, MoveNet, YOLO Pose 중 ROM 데모에 적합한 후보 비교</li>
+              <li>샘플 영상 10개에서 keypoint 추출 성공/실패 원인 정리</li>
+              <li>사전학습 모델을 그대로 쓰는 MVP와 추가 학습이 필요한 경우를 구분</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="student-head">
+              <div>
+                <h3>박하준</h3>
+                <p>의료기기/측정 환경 성장형</p>
+              </div>
+              <span class="badge">ROM</span>
+            </div>
+            <div class="tag-row">
+              <span class="tag best">측정 환경</span>
+              <span class="tag">임베디드</span>
+              <span class="tag">수학/각도</span>
+            </div>
+            <ul>
+              <li>어깨 각도 계산을 그림과 수식으로 설명하는 1페이지 자료 작성</li>
+              <li>카메라 위치, 거리, 조명, 안내 문구별 실험 조건표 작성</li>
+              <li>측정 전 사용자에게 보여줄 안내 스크립트 초안 작성</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="student-head">
+              <div>
+                <h3>손민준</h3>
+                <p>자동화/API/결과 로직</p>
+              </div>
+              <span class="badge">Logic</span>
+            </div>
+            <div class="tag-row">
+              <span class="tag best">자동화</span>
+              <span class="tag best">LLM</span>
+              <span class="tag">공유 페이지</span>
+            </div>
+            <ul>
+              <li>OX 문항별 점수표와 결과 유형 분류 로직 초안 작성</li>
+              <li>LLM 결과 문구를 쓸 때 피해야 할 의료 과장 표현 목록 정리</li>
+              <li>결과 페이지 URL과 공유 문구가 어떻게 만들어질지 간단한 데이터 흐름 작성</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="student-head">
+              <div>
+                <h3>이여진</h3>
+                <p>AI 활용/인터랙션/프롬프트</p>
+              </div>
+              <span class="badge">AI UX</span>
+            </div>
+            <div class="tag-row">
+              <span class="tag best">C#</span>
+              <span class="tag best">AI 활용</span>
+              <span class="tag">사용자 흐름</span>
+            </div>
+            <ul>
+              <li>Unity WebGL과 일반 웹 구현의 장단점 비교표 작성</li>
+              <li>카메라 측정 시작, 실패, 재시도, 건너뛰기 문구 초안 작성</li>
+              <li>프롬프트로 결과 해석 문구를 생성하는 실험 5개 수행</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="student-head">
+              <div>
+                <h3>이수빈</h3>
+                <p>Unity/C# 학습과 구현 습관 형성</p>
+              </div>
+              <span class="badge">Game</span>
+            </div>
+            <div class="tag-row">
+              <span class="tag best">Unity/C#</span>
+              <span class="tag">상태 관리</span>
+              <span class="tag">테스트 케이스</span>
+            </div>
+            <ul>
+              <li>설문 시작, 진행 중, 결과, 다시하기 상태를 화면 상태표로 정리</li>
+              <li>간단한 버튼/진행률/결과 카드 인터랙션 프로토타입 만들기</li>
+              <li>사용자 입력 누락, 카메라 거부, 모바일 화면 깨짐 테스트 케이스 작성</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="outputs" class="band">
+      <div class="wrap">
+        <h2>산출물 아이디에이션</h2>
+        <p class="section-note">
+          산출물은 “잘 공부했습니다”가 아니라 대표가 바로 볼 수 있는 링크, 표, 캡처, 데모 형태여야 합니다.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>팀</th>
+              <th>산출물</th>
+              <th>담당 후보</th>
+              <th>완료 기준</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="팀">R&amp;D/ROM</td>
+              <td data-label="산출물">ROM 측정 실험 노트</td>
+              <td data-label="담당 후보">이형진</td>
+              <td data-label="완료 기준">샘플 영상, 추출 keypoint, 계산 각도, 실패 원인이 한 표에 정리됨</td>
+            </tr>
+            <tr>
+              <td data-label="팀">R&amp;D/ROM</td>
+              <td data-label="산출물">측정 환경 체크리스트</td>
+              <td data-label="담당 후보">박하준</td>
+              <td data-label="완료 기준">카메라 거리, 조명, 자세 안내, 재촬영 조건이 문서화됨</td>
+            </tr>
+            <tr>
+              <td data-label="팀">R&amp;D/ROM</td>
+              <td data-label="산출물">실패 케이스 갤러리</td>
+              <td data-label="담당 후보">이형진 + 박하준</td>
+              <td data-label="완료 기준">왜 측정이 틀어지는지 이미지와 원인 태그로 설명 가능</td>
+            </tr>
+            <tr>
+              <td data-label="팀">바이럴 MVP</td>
+              <td data-label="산출물">어깨 나이 점수표</td>
+              <td data-label="담당 후보">손민준</td>
+              <td data-label="완료 기준">OX 답변과 카메라 측정 여부에 따라 결과 타입이 안정적으로 나뉨</td>
+            </tr>
+            <tr>
+              <td data-label="팀">바이럴 MVP</td>
+              <td data-label="산출물">카메라 측정 사용자 흐름</td>
+              <td data-label="담당 후보">이여진</td>
+              <td data-label="완료 기준">허용, 거부, 실패, 재시도, 건너뛰기 화면이 모두 정의됨</td>
+            </tr>
+            <tr>
+              <td data-label="팀">바이럴 MVP</td>
+              <td data-label="산출물">게임형 설문/결과 UI</td>
+              <td data-label="담당 후보">이수빈</td>
+              <td data-label="완료 기준">모바일에서 진행률, 선택지, 결과 카드가 깨지지 않게 보임</td>
+            </tr>
+            <tr>
+              <td data-label="팀">바이럴 MVP</td>
+              <td data-label="산출물">공유 문구/CTA 세트</td>
+              <td data-label="담당 후보">손민준 + 이여진</td>
+              <td data-label="완료 기준">의료 과장 없이 공유하고 싶은 결과 문구와 정밀 측정 권유 문구가 준비됨</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="checklist">
+      <div class="wrap">
+        <h2>2주 온보딩 체크리스트</h2>
+        <p class="section-note">
+          첫 2주는 완벽한 구현보다 학습 속도, 협업 습관, 문제를 쪼개는 능력을 확인하는 기간으로 둡니다.
+        </p>
+        <div class="checklist">
+          <div class="week">
+            <time>Day 1</time>
+            <div>
+              <h3>도메인/보안 온보딩</h3>
+              <p>오십견 서비스 흐름, 의료 표현 주의사항, 개인정보/카메라 권한 원칙을 공유합니다.</p>
+            </div>
+          </div>
+          <div class="week">
+            <time>Day 2-3</time>
+            <div>
+              <h3>팀별 기술 스파이크</h3>
+              <p>R&amp;D 팀은 pose estimation 샘플을, 바이럴 팀은 설문 결과 페이지나 Unity/Web 인터랙션 샘플을 실행합니다.</p>
+            </div>
+          </div>
+          <div class="week">
+            <time>Day 4-5</time>
+            <div>
+              <h3>첫 산출물 초안</h3>
+              <p>각자 비교표, 문항표, 화면 상태표, 측정 환경표 중 하나를 만들고 팀 안에서 리뷰합니다.</p>
+            </div>
+          </div>
+          <div class="week">
+            <time>Week 2</time>
+            <div>
+              <h3>작은 데모와 역할 조정</h3>
+              <p>대표가 볼 수 있는 캡처/링크/표를 만들고, 학생별 역할을 유지할지 조정할지 판단합니다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid two" style="margin-top: 14px;">
+          <div class="callout">
+            <h3>학생에게 줄 첫 메시지</h3>
+            <p>
+              “2주 동안 완성품을 만들 필요는 없습니다. 대신 본인이 공부한 내용을 작게라도 재현 가능한 산출물로 남겨주세요.
+              좋은 산출물은 링크, 표, 캡처, 실패 원인이 같이 있는 것입니다.”
+            </p>
+          </div>
+          <div class="callout warning">
+            <h3>관리자가 볼 신호</h3>
+            <p>
+              좋은 신호는 질문이 구체적이고, 실패를 기록하며, 작은 단위로 결과를 공유하는 것입니다.
+              나쁜 신호는 공부만 오래 하고 결과물이 없거나, 의료 표현 리스크를 구분하지 못하는 것입니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>작성 기준: 산학협력 2-Track 운영안과 학생 미팅 메모. 연락처와 학번 등 개인정보는 공유 페이지에서 제외했습니다.</p>
+    </div>
+  </footer>
+</body>
+</html>

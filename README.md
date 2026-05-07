@@ -7,3 +7,7 @@
 배포 주소:
 
 https://khj68.github.io/senior-vibe/
+
+별도 문서:
+
+- 사전학습 및 산출물 아이디에이션: https://khj68.github.io/senior-vibe/prework-outputs.html
